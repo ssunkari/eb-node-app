@@ -1,0 +1,17 @@
+version: '2'
+services:
+  ratesquery:
+    build:
+      context: .
+      dockerfile: Dockerfile-dev
+    image: rates-query
+    command: nodemon -L --debug /app/src/cluster.js
+    volumes:
+      - ./src:/app/src
+      - ./test:/app/test
+    ports:
+      - "3000:3000"
+      - "5858:5858"
+    extra_hosts:
+      - "rates-couch-dev:127.0.0.1"
+      - "provider-data-dev:127.0.0.1"

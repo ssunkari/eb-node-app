@@ -1,0 +1,11 @@
+{
+    "AWSEBDockerrunVersion": "1",
+    "Image": {
+        "Name": "<AWS_ACCOUNT_ID>.dkr.ecr.eu-west-2.amazonaws.com/<NAME>:<TAG>",
+        "Update": "true"
+    },
+    "Logging": "/var/log/hello-world",
+    "Ports": [{
+        "ContainerPort": "<PORT>"
+    }]
+}
